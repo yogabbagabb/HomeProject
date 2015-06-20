@@ -20,14 +20,13 @@ public class Calculator {
 
     // Determine the operator
     
-    for (int i = 0; i < tokens.length; i++)
-    {
-    	if (!tokens[i].matches("^[0-9]*$")){
+    
+    	if (!tokens[0].matches("^[0-9]*$") || !tokens[2].matches("^[0-9]*$")){
     		System.out.println("bad arg");
     		System.exit(1);
-    		break;
+    		
     	}
-    }
+    
     switch (tokens[1].charAt(0)) {
     
     
