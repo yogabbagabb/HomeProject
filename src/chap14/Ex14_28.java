@@ -19,7 +19,7 @@ public class Ex14_28 {
 	
 	public static void main (String[]args)
 	{
-		goDeep(new File (args[0]), true);
+		goDeep(new File ("Exercise04_28"), true);
 	}
 
 	
