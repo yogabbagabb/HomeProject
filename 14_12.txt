@@ -1,5 +1,0 @@
-
-public static void main(String[]args) {
-	Code random access code
-	let's see if this goes through
-}

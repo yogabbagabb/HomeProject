@@ -1,0 +1,28 @@
+Yahtzee Class Design:
+
+
+How is Yahtzee Played:
+
+5 Die
+Rolled a maximum of three times
+You choose from 13 categories
+
+
+You keep playing this game until the end
+
+What Classes exist?
+
+
+Die Class
+Player Class
+Yahtzee
+UI Class
+
+ 	
+ 	
+ Another note.
+ One type of note is fast forward
+ another is merge commit
+ a final one is issues urging attention
+ done
+ 	

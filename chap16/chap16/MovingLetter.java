@@ -44,6 +44,9 @@ public class MovingLetter extends JFrame {
 			
 			message = s;
 			timer.start();
+			
+			
+			this.getInputMap().put(MouseEvent.BUTTON1, new Object ());
 			// who adds the timelistener; the clock
 			// yes, the clock adds the timerlistener
 			// who listens for the timerlistener
@@ -58,9 +61,15 @@ public class MovingLetter extends JFrame {
 					int delay = timer.getDelay();
 					
 					if (e.getButton() == MouseEvent.BUTTON1)
-					timer.setDelay(delay > 10? delay - 10 : 0);
+					{
+					timer.setDelay(delay > 10? delay - 50 : 0);
+					System.out.println("helo");
+					}
 					if (e.getButton() == MouseEvent.BUTTON3)
-					timer.setDelay(delay > 1000? 1000 : delay + 10);
+					{
+					timer.setDelay(delay > 1000? 1000 : delay + 50);
+					System.out.println("bye");
+					}
 				}
 			});
 		
