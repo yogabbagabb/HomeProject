@@ -157,4 +157,14 @@ public abstract class MatrixManipulator<E extends Number>
 	{
 		return matrix != null && matrix.length > 0 && matrix[0].length > 0;
 	}
+	
+	private static <E> void printMatrix(E[][] matrix)
+	{
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[0].length; j++)
+			{
+				System.out.println(matrix[i][j]);
+			}
+		}
+	}
 }
