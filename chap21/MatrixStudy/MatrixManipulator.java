@@ -1,16 +1,24 @@
+package MatrixStudy;
 
 
 /**
  * Offers the specified operations on integer matrices.
  */
-public class MatrixManipulator<E extends Number>
+public abstract class MatrixManipulator<E extends Number>
 {
 	/**
 	 * Determines if (first + second) is defined where + indicates matrix addition.
 	 * 
 	 * @return true if matrix addition is defined, false otherwise.
 	 */
-	public static <E> boolean addable(E[][] first, E[][] second)
+	
+	public abstract E add(E o1, E o2);
+	
+	public abstract E multiply(E o1, E o2);
+	
+	public abstract E zero();
+	
+	public boolean addable(E[][] first, E[][] second)
 	{
 		
 		if (first.length != second.length){
@@ -34,7 +42,7 @@ public class MatrixManipulator<E extends Number>
 	 * @throws IllegalArgumentException
 	 *             if the precondition is not met.
 	 */
-	public static <E extends Number> E[][] add(E[][] first, E[][] second)
+	public E[][] add(E[][] first, E[][] second)
 	{
 		E[][] sum =(E[][]) new Object [first.length][second[0].length];
 
@@ -42,7 +50,7 @@ public class MatrixManipulator<E extends Number>
 			
 			for (int i = 0; i < sum.length; i++){
 				for (int j = 0; j < sum[i].length; j++){
-					sum[i][j] = (E) ((Double)first[i][j] + (Double)second [i][j]);
+					sum[i][j] = add(first[i][j],second [i][j]);
 				}
 			}
 			return sum;
@@ -51,7 +59,8 @@ public class MatrixManipulator<E extends Number>
 		else
 			throw new IllegalArgumentException ();
 	}
-
+	
+	
 	/**
 	 * Performs (scalar * matrix) where * indicates scalar multiplication of a matrix. (Precondition: matrix.length > 0 && matrix[0].length > 0)
 	 * 
@@ -59,17 +68,17 @@ public class MatrixManipulator<E extends Number>
 	 * @throws IllegalArgumentException
 	 *             if the precondition is not met.
 	 */
-	public static <E> E[][] multiplyByScalar(int scalar, E[][] matrix)
+	public E[][] multiplyByScalar(E scalar, E[][] matrix)
 	{
-		int [][] product;
+		E [][] product;
 		
 		if (atLeastOneByOne(matrix))
 		{
-			product = new int [matrix.length][matrix[0].length];
+			product = (E[][]) new Object [matrix.length][matrix[0].length];
 			
 			for (int i = 0; i < product.length; i++){
 				for (int j = 0; j < product[i].length; j++){
-					product[i][j] = matrix[i][j] * scalar;
+					product[i][j] = multiply(matrix[i][j],scalar);
 				}
 			}
 			return product;
@@ -87,14 +96,14 @@ public class MatrixManipulator<E extends Number>
 	 * @throws IllegalArgumentException
 	 *             if the precondition is not met.
 	 */
-	public static <E> int multiply(E[][] first, int row, E[][] second, int col)
+	public E multiplyTile(E[][] first, int row, E[][] second, int col)
 	{
-		int result = 0;
+		E result = null;
 		
 		if (atLeastOneByOne(first) && first[row].length == second.length)
 			{
 				for (int i = 0; i < second.length; i++){
-				result += first[row][i] * second[i][col];
+				result = add(zero(), multiply(first[row][i],second[i][col]));
 				}
 				
 				return result;
@@ -109,7 +118,7 @@ public class MatrixManipulator<E extends Number>
 	 * 
 	 * @return true if matrix multiplication is defined, false otherwise.
 	 */
-	public static boolean multipliable(int[][] first, int[][] second)
+	public boolean multipliable(E[][] first, E[][] second)
 	{	// consider adding oneByOne to first and second
 		return (first[0].length == second.length);
 	}
@@ -121,18 +130,18 @@ public class MatrixManipulator<E extends Number>
 	 * @throws IllegalArgumentException
 	 *             if the precondition is not met.
 	 */
-	public static int[][] multiply(int[][] first, int[][] second)
+	public E[][] multiply(E[][] first, E[][] second)
 	{
-		int [][] product = null;
+		E [][] product = null;
 		if (multipliable(first,second)){
 			
 				
-				 product = new int [first.length][second[0].length];
+				 product = (E[][]) new Object [first.length][second[0].length];
 				
 				 
 				 for (int i = 0; i < product.length; i++ )
 					 for (int j = 0; j < product[i].length; j++)	
-						product[i][j] = multiply(first,i,second,j);
+						product[i][j] = multiplyTile(first,i,second,j);
 					
 				
 			}
