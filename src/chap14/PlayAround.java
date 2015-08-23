@@ -8,20 +8,22 @@ public class PlayAround {
 	
 	public static void main (String[]args)
 	{
-		File file = new File ("bobo//bobo", "dojo");
+		File file = new File ("bobo/bobo", "dojo");
 		if (!file.exists())
 		{
 			System.out.println("Helo");
-			file.mkdirs();
 		}
 		
 		File file2 = new File (file, "this.txt");
 			PrintWriter writer;
 		try{
-		writer = new PrintWriter(file2);
-		writer.print("Helklo");
-		System.out.println("another");
-		writer.close();
+		
+		if (true)
+		{
+	
+			throw new IOException ();
+		}
+		
 		}
 		
 		catch(IOException e)

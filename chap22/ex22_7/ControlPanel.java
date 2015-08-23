@@ -24,12 +24,16 @@ public class ControlPanel extends JFrame {
 		LowerPanel lowerPanel = new LowerPanel ();
 		StringPanel upperPanel = new StringPanel ();
 		
-		this.setLayout(new java.awt.GridLayout(3,0));
-		
-		this.add(lowerPanel);
-		this.add(upperPanel);
-		this.add(hang);
-		
+//		this.setLayout(new java.awt.GridLayout(3,0));
+//		
+//		this.add(lowerPanel);
+//		this.add(upperPanel);
+//		this.add(hang);
+//		
+		this.setLayout(new java.awt.BorderLayout());
+		this.add(lowerPanel,BorderLayout.SOUTH);
+		this.add(upperPanel,BorderLayout.CENTER);
+		this.add(hang,BorderLayout.NORTH);
 		
 		
 	}

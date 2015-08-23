@@ -43,7 +43,41 @@ public class MultipleBallApp extends JApplet {
       // Register listeners
       jbtSuspend.addActionListener(new Listener());
       jbtResume.addActionListener(new Listener());
-      jbtAdd.addActionListener(new Listener());
+      jbtAdd.addMouseListener(new MouseListener (){
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+
+			ballPanel.add();
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+    	  
+      
+      });
+      
       jbtSubtract.addActionListener(new Listener());
       jsbDelay.addAdjustmentListener(new AdjustmentListener() {
         @Override

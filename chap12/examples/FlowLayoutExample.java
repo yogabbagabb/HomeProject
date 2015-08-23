@@ -5,6 +5,11 @@ import javax.swing.*;
 
 public class FlowLayoutExample extends JFrame {
 	
+// final
+	
+ /**
+**  public static void main
+*/
 	
 	
 	
