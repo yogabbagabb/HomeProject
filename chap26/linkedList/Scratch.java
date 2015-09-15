@@ -12,7 +12,10 @@ public class Scratch {
 	
 	public static void main (String[]args)
 	{
-		Scratch s = new Scratch ();
-//		s.getA() = new int [] {4,5,6};
+		Node <String> s = null;
+		if (s.next == null)
+		{
+			System.out.println("d");
+		}
 	}
 }

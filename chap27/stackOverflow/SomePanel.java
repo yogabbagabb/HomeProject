@@ -3,7 +3,7 @@ package stackOverflow;
 import java.awt.Canvas;
 
 import javax.swing.*;
-public class Panel {
+public class SomePanel {
 
 private static JFrame frame = new JFrame("World Editor v0.1");;
 private static JPanel panel = new JPanel();

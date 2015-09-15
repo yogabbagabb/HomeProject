@@ -1,4 +1,4 @@
-package stackOverflow;
+;package stackOverflow;
 
 public class MyEnumSet extends Enum<MyEnum> {
 

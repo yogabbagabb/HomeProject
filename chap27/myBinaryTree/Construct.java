@@ -26,10 +26,10 @@ public class Construct extends javax.swing.JFrame {
 			System.out.println(it.next());
 		}
 		
-		while (it.hasPrevious())
-		{
-			System.out.println(it.previous());
-		}
+//		while (it.hasPrevious())
+//		{
+//			System.out.println(it.previous());
+//		}
 
 		myPrinter <Integer> printer = new myPrinter <> ();
 		Construct frame = new Construct (printer);

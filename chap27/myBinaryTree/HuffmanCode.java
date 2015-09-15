@@ -37,15 +37,6 @@ public class HuffmanCode {
 	
 	public static <K,V extends Comparable<? super V>> List<Entry<K,V>> orderMap(Map<K,V> map)
 	{
-		TreeSet <Entry<K,V>> set = new TreeSet <> (new java.util.Comparator <Entry<K,V>> (){
-
-
-			public int compare(Entry<K,V> o1, Entry<K,V> o2) {
-				return o1.getValue().compareTo(o2.getValue());
-			}
-			
-		});
-		
 		java.util.ArrayList <Entry<K,V>> list = new java.util.ArrayList <> (); 
 		
 		

@@ -20,12 +20,14 @@ public class LinkedListTestor<E>
 	
 	public static void main (String[]args)
 	{
-		MyLinkedList<String> list = new MyLinkedList <> ();
-		list.addFirst("1");
-		list.addFirst("Aaha");
-		list.addFirst("Aah");
-		list.addFirst("Aahan");
-		list.addFirst("Aaha");		
+		MyLinkedList_Practice_9_6 <String> list = new MyLinkedList_Practice_9_6 <> ();
+		list.add("1");
+		list.add("Aaha");
+		list.add("Aah");
+		list.add("Aahan");
+		list.add("Aaha");
+		list.add(0, "First");
+		list.add(2, "Before Aaha");
 		
 		Iterator<String> it = list.iterator();
 		while (it.hasNext())

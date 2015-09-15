@@ -4,12 +4,12 @@ public class SetOperations {
 	
 	public static void main (String[]args)
 	{
-		java.util.Set <String> set = new java.util.HashSet <> ();
+		java.util.Set <String> set = new java.util.HashSet <String> ();
 		set.add("George");
 		set.add("Jim");
 		set.add("J");
 		
-		java.util.Set <String> setTwo = new java.util.HashSet <> ();
+		java.util.Set <String> setTwo = new java.util.HashSet <String> ();
 		setTwo.add("Gj");
 		setTwo.add("Jim");
 		setTwo.add("J");
