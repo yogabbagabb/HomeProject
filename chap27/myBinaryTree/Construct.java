@@ -1,8 +1,8 @@
 package myBinaryTree;
 
-public class Construct extends javax.swing.JFrame {
+public class Construct <E extends java.lang.Number & Comparable<E>> extends javax.swing.JFrame {
 
-	public Construct(myPrinter panel)
+	public Construct(MyRevisedPrinter <E> panel)
 	{
 		this.add(panel);
 	}
@@ -17,7 +17,7 @@ public class Construct extends javax.swing.JFrame {
 		}
 		
 		ImprovedMyTree <Integer> tree = new ImprovedMyTree<> (array);
-//		BTreePrinter.printTreeNode(tree.root);
+		BTreePrinter.printTreeNode(tree.root);
 		
 		System.out.println(tree.countLeaves(tree.root));
 		java.util.Iterator<Integer> it = tree.iterator();
@@ -26,18 +26,15 @@ public class Construct extends javax.swing.JFrame {
 			System.out.println(it.next());
 		}
 		
-//		while (it.hasPrevious())
-//		{
-//			System.out.println(it.previous());
-//		}
-
-		myPrinter <Integer> printer = new myPrinter <> ();
-		Construct frame = new Construct (printer);
+		MyRevisedPrinter <Integer> printer = new MyRevisedPrinter <> (50,30);
+		Construct <Integer> frame = new Construct <> (printer);
+		frame.setLayout(new java.awt.BorderLayout ());
+		frame.setPreferredSize(printer.getPreferredSize());
 		frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		
-		printer.print(tree.root);
+		printer.printTree(tree);
 		System.out.println("Done");
 		
 		
