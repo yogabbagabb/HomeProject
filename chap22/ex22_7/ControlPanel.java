@@ -122,6 +122,7 @@ public class ControlPanel extends JFrame {
 		@Override
 		public void paintComponent(Graphics g)
 		{
+			super.paintComponent(g);
 			g.setColor(Color.BLACK);
 			g.drawOval(50, 50, 25, 25);
 			g.fillOval(50, 50, 25, 25);

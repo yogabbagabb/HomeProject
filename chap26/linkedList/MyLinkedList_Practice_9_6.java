@@ -26,6 +26,7 @@ public class MyLinkedList_Practice_9_6<E> extends MyAbstractList<E> {
 					current = head;
 					count++;
 				}
+				
 				else
 				{
 					current = current.next;
@@ -46,6 +47,7 @@ public class MyLinkedList_Practice_9_6<E> extends MyAbstractList<E> {
 				current.next = new Node<E> (e);
 				current.next.next = next;
 			}
+			
 			else
 			{
 				current.next = new Node <E> (e);

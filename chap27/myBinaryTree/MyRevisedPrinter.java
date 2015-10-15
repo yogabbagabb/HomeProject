@@ -17,6 +17,8 @@ public class MyRevisedPrinter <E extends java.lang.Number & Comparable<E>> exten
 		int height = 100;
 		int initialDepth = 1;
 		printNodeInOrder(copy.root, this.getWidth()/2, height, initialDepth);
+		testPrint();
+		repaint();
 	}
 	
 	public void printNodeInOrder(TreeNode <E> node, int x, int y, int depth)
@@ -32,6 +34,24 @@ public class MyRevisedPrinter <E extends java.lang.Number & Comparable<E>> exten
 		printNodeInOrder(node.right, x + (int)(spacing/depth + 1), y + verticalSpacing, depth + 1);
 		g.drawLine(x, y,  x + (int)(spacing/depth + 1), y + verticalSpacing);
 		
+	}
+	
+	public void testPrint()
+	{
+		java.awt.Graphics g= this.getGraphics();
+		g.drawOval(this.getWidth(),this.getHeight(), 50, 50);
+	}
+	
+	@Override
+	public void paint(java.awt.Graphics g)
+	{
+		g.drawOval(this.getWidth(),this.getHeight(), 50, 50);
+	}
+	
+	@Override
+	public void paintComponent(java.awt.Graphics g)
+	{
+		g.drawOval(this.getWidth(),this.getHeight(), 50, 50);
 	}
 	
 	public void printTreeNode(TreeNode<E> node, int x, int y, int depth)
